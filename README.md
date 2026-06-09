@@ -1,8 +1,7 @@
 # TelQbot
 
-TelQbot is a private Telegram bot for controlling **qBittorrent** from your phone. It is built for a Stremio + debrid workflow: add torrents into the right library folders, manage downloads, and refresh the Stremio catalog without opening the Web UI.
+Most of the qbittorrent telegram bots lacked the features that I was loking for so here we are. Also I wanted to integrate some custom options to control a Stremio addon that I am workong on. You can skip that part or reuse the button forsomething else. TelQbot is a private Telegram bot for controlling **qBittorrent** from your phone. It is built for a Stremio + debrid workflow: add torrents into the right library folders, manage downloads, and refresh the Stremio catalog without opening the Web UI.
 
-Unauthorized Telegram users get **no response at all** — the bot silently ignores them.
 
 ## Run with Docker (recommended)
 
