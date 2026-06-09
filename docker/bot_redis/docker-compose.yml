@@ -1,0 +1,13 @@
+services:
+  bot:
+    image: "telqbot:latest"
+    container_name: qbittorrent-bot
+    restart: unless-stopped
+    depends_on: cache
+    volumes:
+      - "./qbittorrent-bot-data:/app/data"
+
+  cache:
+    image: redis:8
+    container_name: redis-cache
+    restart: unless-stopped

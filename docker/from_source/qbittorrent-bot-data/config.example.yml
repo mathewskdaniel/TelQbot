@@ -1,0 +1,41 @@
+# Docker setup: copy this file to config.yml in this same folder:
+#   cp config.example.yml config.yml
+#
+# This folder is mounted as /app/data in the container.
+# For non-Docker runs, use data/config.example.yml in the project root instead.
+
+client:
+  type: qbittorrent
+  host: https://172.17.0.1:443/
+  user: YOUR_QBITTORRENT_USERNAME
+  password: YOUR_QBITTORRENT_PASSWORD
+
+redis:
+  url: redis://cache:6379/0
+
+telegram:
+  bot_token: YOUR_TELEGRAM_BOT_TOKEN
+  proxy: null
+
+content_categories:
+  - id: movies
+    label: "🎬 Movie torrent"
+    prompt: "Send a movie magnet link or .torrent file"
+    qbittorrent_category: StremioMovies
+    save_path: /path/on/host/to/media/movies
+  - id: series
+    label: "📺 TV series torrent"
+    prompt: "Send a TV series magnet link or .torrent file"
+    qbittorrent_category: StremioSeries
+    save_path: /path/on/host/to/media/series
+
+stremio:
+  admin_base_url: https://str.example.com:8443
+  admin_scan_token: YOUR_STREMIO_ADMIN_SCAN_TOKEN
+
+users:
+  - user_id: 123456789
+    role: administrator
+    notify: true
+    notification_filter: null
+    locale: en

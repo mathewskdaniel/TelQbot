@@ -1,0 +1,18 @@
+[project]
+name = "TelQbot"
+version = "1.0.0"
+description = "TelQbot — Telegram bot for qBittorrent with Stremio library integration."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram[i18n]>=3.24.0",
+    "aiohttp-socks>=0.11.0",
+    "apscheduler>=3.11.2",
+    "babel>=2.17.0",
+    "psutil>=7.2.1",
+    "pydantic>=2.12.5",
+    "pyyaml>=6.0.3",
+    "qbittorrent-api>=2025.11.1",
+    "redis>=7.1.0",
+    "watchfiles>=1.1.1",
+]

@@ -1,0 +1,41 @@
+from typing import List, Union
+
+from ..entities.torrent import Torrent
+from .mapper import Mapper
+from qbittorrentapi.torrents import TorrentInfoList, TorrentDictionary
+
+
+class QBittorrentMapper(Mapper):
+    @classmethod
+    def map(cls, torrents: Union[TorrentDictionary, TorrentInfoList]) -> Union[Torrent, List[Torrent]]:
+        if isinstance(torrents, TorrentInfoList):
+            return [
+                Torrent(
+                    torrent.info.hash,
+                    torrent.name,
+                    torrent.progress,
+                    torrent.dlspeed,
+                    torrent.upspeed,
+                    torrent.state,
+                    torrent.size,
+                    torrent.eta,
+                    torrent.ratio,
+                    torrent.seeding_time,
+                    torrent.category
+                )
+                for torrent in torrents
+            ]
+
+        return Torrent(
+            torrents.info.hash,
+            torrents.name,
+            torrents.progress,
+            torrents.dlspeed,
+            torrents.upspeed,
+            torrents.state,
+            torrents.size,
+            torrents.eta,
+            torrents.ratio,
+            torrents.seeding_time,
+            torrents.category
+        )
